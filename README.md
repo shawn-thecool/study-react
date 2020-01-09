@@ -1,2 +1,2 @@
-# study-react
+# study-ts-react
 react dev test
