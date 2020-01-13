@@ -1,13 +1,17 @@
 import * as React from 'react'
-import User, { UserProps } from './User'
+import IUser from '../interfaces/user/IUser'
+import User from './User'
 
-interface UsersProps {
-  users: UserProps[]
+
+interface IProps {
+  users: IUser[]
 }
-interface UsersState {}
+interface IState {
+  currentPageIdx:number,
+}
 
-class Users extends React.Component<UsersProps, UsersState> {
-  constructor(props: UsersProps) {
+class Users extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props)
   }
   public static defaultProps = {
@@ -19,9 +23,9 @@ class Users extends React.Component<UsersProps, UsersState> {
       <div>
         <h2>유저 리스트</h2>
         <ul>
-          {users.map((user: UserProps) => (
+          {users.map((user: IUser) => (
             <li key={`user-info-${user.id}`}>
-              <User id={user.id} name={user.name} age={user.age}></User>
+              <User id={user.id} name={user.name} age={user.age} ></User>
             </li>
           ))}
         </ul>

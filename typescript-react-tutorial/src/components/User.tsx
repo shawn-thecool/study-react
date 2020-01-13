@@ -1,18 +1,14 @@
 import * as React from 'react'
+import IUser from '../interfaces/user/IUser'
 
-export interface UserProps {
-  id: string
-  name: string
-  age: number
-}
-interface UserState {}
+interface IState {}
 
-class User extends React.Component<UserProps, UserState> {
-  constructor(props: UserProps) {
+class User extends React.Component<IUser, IState> {
+  constructor(props: IUser) {
     super(props)
   }
   public static defaultProps = {
-    id: -1,
+    id: '0000-1111',
     name: 'tester',
     age: -1
   }
@@ -26,6 +22,8 @@ class User extends React.Component<UserProps, UserState> {
           <dd>{name}</dd>
           <dt>나이</dt>
           <dd>{age}</dd>
+          <dt>톡아이디</dt>
+          <dd></dd>
         </dl>
       </div>
     )
